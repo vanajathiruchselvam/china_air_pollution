@@ -1,14 +1,19 @@
-import streamlit as st
-from multiapp import MultiApp
-from pages import data_overview, eda, model, prediction
+# main.py
 
-# Set page configuration with a background image
+
+import streamlit as st
+
+
 st.set_page_config(
     page_title="China Air Pollution Dashboard",
     layout="wide"
 )
 
-# Set background image using custom HTML
+
+from multiapp import MultiApp
+from pages import data_overview, eda, model, prediction
+
+
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"] {
@@ -25,12 +30,10 @@ page_bg_img = """
 h1, h2, h3 {
     color: #002B5B;
 }
-
 </style>
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
-# ------------------ 🏁 Introduction Section ------------------ #
 st.markdown("""
 #  **China Air Pollution Analysis Dashboard**
 
@@ -42,39 +45,34 @@ By analyzing data from selected regions, we aim to explore trends, assess air qu
 
 ---
 
- **Selected Stations for Analysis**
+**Selected Stations for Analysis**
 
 To ensure geographical and environmental diversity, we selected **4 representative stations** from the Beijing region:
 
-1. **Guanyuan** – ️ *Urban*
-- **Location**: Central Beijing
-- **Why**: Represents dense urban traffic and pollution load.
+1. **Guanyuan** – ️ *Urban*  
+   • **Location**: Central Beijing  
+   • **Why**: Represents dense urban traffic and pollution load.
 
-2. **Shunyi** –  *Suburban*
-- **Location**: Northeast suburb of Beijing
-- **Why**: Shows suburban growth and industrial influence.
+2. **Shunyi** –  *Suburban*  
+   • **Location**: Northeast suburb of Beijing  
+   • **Why**: Shows suburban growth and industrial influence.
 
-3. **Changping** – ️ *Semi-Rural*
-- **Location**: Northern fringe of Beijing
-- **Why**: Useful for comparing urban vs agricultural pollution sources.
+3. **Changping** – ️ *Semi-Rural*  
+   • **Location**: Northern fringe of Beijing  
+   • **Why**: Useful for comparing urban vs agricultural pollution sources.
 
-4. **Dingling** –  *Rural/Historic*
-- **Location**: Near mountains, north Beijing
-- **Why**: Offers a cleaner environment for baseline comparison.
-
----
-
-This selection allows us to compare **urban vs rural**, **high vs low pollution**, and understand **geospatial air quality trends**.
+4. **Dingling** –  *Rural/Historic*  
+   • **Location**: Near mountains, north Beijing  
+   • **Why**: Offers a cleaner environment for baseline comparison.
 
 ---
 
-## Map
+
+---
 
 ![Air Pollution China Map](https://aqli.epic.uchicago.edu/wp-content/uploads/2021/02/China_2023-screen-shot.png)
-
 """, unsafe_allow_html=True)
 
-# ------------------ 🚀 Run the App ------------------ #
 app = MultiApp()
 app.add_app("📄 Data Overview", data_overview.app)
 app.add_app("📊 Exploratory Data Analysis", eda.app)
