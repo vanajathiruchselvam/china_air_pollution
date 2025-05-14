@@ -68,6 +68,7 @@ To ensure geographical and environmental diversity, we selected **4 representati
 """, unsafe_allow_html=True)
 
 app = MultiApp()
+app.add_app("🏠 Home", home.app)
 app.add_app("📄 Data Overview", data_overview.app)
 app.add_app("📊 Exploratory Data Analysis", eda.app)
 app.add_app("🤖 Model Training", model.app)
