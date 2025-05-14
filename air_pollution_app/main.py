@@ -1,13 +1,12 @@
 import streamlit as st
 
-# Set page config FIRST
 st.set_page_config(
     page_title="China Air Pollution Dashboard",
     layout="wide"
 )
 
 from multiapp import MultiApp
-from pages import home, data_overview, eda, model, prediction  # Ensure home is imported
+from pages import home, data_overview, eda, model, prediction
 
 # Background and style
 page_bg_img = """
@@ -36,5 +35,5 @@ app.add_app("🏠 Home", home.app)
 app.add_app("📄 Data Overview", data_overview.app)
 app.add_app("📊 Exploratory Data Analysis", eda.app)
 app.add_app("🤖 Model Training", model.app)
-app.add_app("📈 Predict AQI", prediction.app)
+app.add_app("📈 Summary", prediction.app)
 app.run()
