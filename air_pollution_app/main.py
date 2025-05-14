@@ -1,19 +1,15 @@
-# main.py
-
-
 import streamlit as st
 
-
+# Set page config FIRST
 st.set_page_config(
     page_title="China Air Pollution Dashboard",
     layout="wide"
 )
 
-
 from multiapp import MultiApp
 from pages import data_overview, eda, model, prediction
 
-
+# Background and style
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"] {
@@ -34,6 +30,7 @@ h1, h2, h3 {
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
+# Introduction content
 st.markdown("""
 #  **China Air Pollution Analysis Dashboard**
 
@@ -67,12 +64,10 @@ To ensure geographical and environmental diversity, we selected **4 representati
 
 ---
 
-
----
-
 ![Air Pollution China Map](https://aqli.epic.uchicago.edu/wp-content/uploads/2021/02/China_2023-screen-shot.png)
 """, unsafe_allow_html=True)
 
+# App configuration
 app = MultiApp()
 app.add_app("📄 Data Overview", data_overview.app)
 app.add_app("📊 Exploratory Data Analysis", eda.app)
