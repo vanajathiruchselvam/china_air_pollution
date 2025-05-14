@@ -3,8 +3,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Set the page config as the very first Streamlit command
-st.set_page_config(layout="wide")
+
 
 # Set background image using custom HTML
 def set_background():
