@@ -25,7 +25,7 @@ def set_background():
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 def load_data():
-    df = pd.read_csv('data/air_pollution.csv')
+    df = pd.read_csv('air_pollution_app/data/air_pollution.csv')
     st.write("Column Names in DataFrame:", df.columns)
     return df
 
