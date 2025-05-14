@@ -39,7 +39,7 @@ def plot_box(df, col):
     return fig
 
 
-def main():
+def app():
     set_background()
     st.title(" Air Quality Data Overview")
     st.markdown("Here is an overview of PM2.5, PM10, and other pollutants across selected stations.")
