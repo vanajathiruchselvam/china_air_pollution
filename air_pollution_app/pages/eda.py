@@ -5,7 +5,7 @@ import seaborn as sns
 
 def app():
     st.title("📊 Exploratory Data Analysis")
-    df = pd.read_csv("data/air_pollution.csv")
+    df = pd.read_csv("air_pollution_app/data/air_pollution.csv")
 
     st.subheader("AQI Category Distribution")
     fig1, ax1 = plt.subplots()
