@@ -66,5 +66,3 @@ To ensure geographical and environmental diversity, we selected **4 representati
 
 ![Air Pollution China Map](https://aqli.epic.uchicago.edu/wp-content/uploads/2021/02/China_2023-screen-shot.png)
 """, unsafe_allow_html=True)
-
-app.run()
