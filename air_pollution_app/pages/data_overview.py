@@ -53,7 +53,7 @@ def plot_box(df, col):
     return fig
 
 # Main function
-def main():
+def app():
     # Set the background image using custom HTML
     set_background()
 
