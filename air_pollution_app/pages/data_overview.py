@@ -38,8 +38,8 @@ def plot_box(df, col):
     ax.set_title(f"{col} Distribution by Station")
     return fig
 
-# ✅ Use app(), not main()
-def app():
+
+def main():
     set_background()
     st.title(" Air Quality Data Overview")
     st.markdown("Here is an overview of PM2.5, PM10, and other pollutants across selected stations.")
