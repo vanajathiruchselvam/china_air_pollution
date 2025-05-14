@@ -1,7 +1,5 @@
 # multiapp.py
 
-import streamlit as st
-
 class MultiApp:
     def __init__(self):
         self.apps = []
@@ -13,8 +11,9 @@ class MultiApp:
         })
 
     def run(self):
+        import streamlit as st
         app = st.sidebar.radio(
-            '📂 Select a Page',
+            'Select Page:',
             self.apps,
             format_func=lambda app: app['title']
         )
