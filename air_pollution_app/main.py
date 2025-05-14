@@ -66,3 +66,10 @@ To ensure geographical and environmental diversity, we selected **4 representati
 
 ![Air Pollution China Map](https://aqli.epic.uchicago.edu/wp-content/uploads/2021/02/China_2023-screen-shot.png)
 """, unsafe_allow_html=True)
+
+app = MultiApp()
+app.add_app("📄 Data Overview", data_overview.app)
+app.add_app("📊 Exploratory Data Analysis", eda.app)
+app.add_app("🤖 Model Training", model.app)
+app.add_app("📈 Predict AQI", prediction.app)
+app.run()
