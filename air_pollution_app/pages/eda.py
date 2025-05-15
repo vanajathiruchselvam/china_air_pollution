@@ -26,11 +26,7 @@ def app():
     plt.xticks(rotation=45)
     st.pyplot(fig1)
 
-    # Correlation Heatmap
-    st.subheader("Correlation Heatmap")
-    fig2, ax2 = plt.subplots(figsize=(8, 4))
-    sns.heatmap(df.corr(numeric_only=True), annot=True, cmap="coolwarm", ax=ax2)
-    st.pyplot(fig2)
+    
 
     # Seasonal Avg
     st.subheader("Average Pollutant Concentration by Season")
@@ -77,7 +73,7 @@ def app():
 
     # Time Series: Weekly vs Monthly
     st.subheader("PM2.5 Trend: Weekly vs Monthly")
-    df['datetime'] = pd.to_datetime(df['datetime'], errors='coerce')  # Adjust column name if needed
+    df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
     df.set_index('datetime', inplace=True)
     numeric_df = df.select_dtypes(include='number')
     weekly_avg = numeric_df.resample('W').mean()
