@@ -71,21 +71,7 @@ def app():
     plt.xticks(rotation=45)
     st.pyplot(fig6)
 
-    # Time Series: Weekly vs Monthly
-    st.subheader("PM2.5 Trend: Weekly vs Monthly")
-    df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
-    df.set_index('datetime', inplace=True)
-    numeric_df = df.select_dtypes(include='number')
-    weekly_avg = numeric_df.resample('W').mean()
-    monthly_avg = numeric_df.resample('M').mean()
 
-    fig7, ax7 = plt.subplots(figsize=(10, 4))
-    ax7.plot(weekly_avg['PM2.5'], label='Weekly')
-    ax7.plot(monthly_avg['PM2.5'], label='Monthly')
-    ax7.set_title("PM2.5 Trend")
-    ax7.legend()
-    ax7.grid(True)
-    st.pyplot(fig7)
 
     # 30-day Rolling Mean
     st.subheader("30-Day Rolling Average of PM2.5")
